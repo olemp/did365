@@ -1,9 +1,7 @@
 
-import { TypedHash } from '@pnp/common';
-import { getId } from '@uifabric/utilities';
 import { UserMessage } from 'components/UserMessage';
 import { getValueTyped as value } from 'helpers';
-import { ITimeEntry, IProject } from 'interfaces';
+import { IProject, ITimeEntry } from 'interfaces';
 import { Modal } from 'office-ui-fabric-react/lib/Modal';
 import { Pivot, PivotItem } from 'office-ui-fabric-react/lib/Pivot';
 import { Toggle } from 'office-ui-fabric-react/lib/Toggle';

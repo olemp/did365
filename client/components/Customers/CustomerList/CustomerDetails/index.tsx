@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/react-hooks';
 import { GET_PROJECTS } from 'components/Projects/GET_PROJECTS';
-import { ProjectList } from 'components/Projects/ProjectList';
+import { ProjectList } from 'components/Projects';
 import { getValueTyped as value } from 'helpers';
 import { IProject } from 'interfaces';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';

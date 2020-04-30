@@ -16,8 +16,10 @@ function getCurrentCommitSha() {
 // We need to get the current commit sha ourself.
 const sha = getCurrentCommitSha();
 
+const statusUrl = `https://api.github.com/repos/${owner}/${repo}/statuses/${sha}`;
+
 async function setStatus(context, state, description) {
-  return fetch(`https://api.github.com/repos/${owner}/${repo}/statuses/${sha}`, {
+  return fetch(statusUrl, {
     method: 'POST',
     body: JSON.stringify({
       state,
@@ -36,13 +38,15 @@ async function setStatus(context, state, description) {
 
   // Run in parallel
   await Promise.all(
-    checks.map(async check => {
+    checks(statusUrl).map(async check => {
       const { name, callback } = check;
 
       await setStatus(name, 'pending', 'Running check..');
 
+      if (!callback) return;
       try {
         const response = await callback();
+        if (response === null) return;
         await setStatus(name, 'success', response);
       } catch (err) {
         const message = err ? err.message : 'Something went wrong';

@@ -2,7 +2,7 @@ const path = require('path');
 const fg = require('fast-glob');
 const gzipSize = require('gzip-size');
 
-const BUILD_DIR = path.join(process.cwd(), 'dist');
+const BUILD_DIR = path.join(process.cwd(), 'public/js');
 
 const sizes = [
   {

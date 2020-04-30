@@ -17,14 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install
+    - name: Install and build
       run: |
         npm install --production
-      env:
-        NODE_ENV: production
-      name: Package client
-      run: |
-        npm run packageClient
+        npm run build
       env:
         NODE_ENV: production
     - name: Run status checks

@@ -1,4 +1,4 @@
-// const bundleSize = require('./bundle-size');
+const fetch = require('node-fetch');
 
 const sleep = (s) => {
   return new Promise(resolve => {

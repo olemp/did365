@@ -1,5 +1,3 @@
-
-import { getId } from '@uifabric/utilities';
 import { UserMessage } from 'components/UserMessage';
 import { MessageBarButton } from 'office-ui-fabric-react/lib/Button';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
@@ -8,13 +6,14 @@ import * as React from 'react';
 import { useState } from 'react';
 import { IProjectColumnProps } from './IProjectColumnProps';
 import { ResolveProjectModal } from './ResolveProjectModal';
+import {useId} from '@uifabric/react-hooks';
 
 /**
  * @component ProjectColumn
  * @description 
  */
 export const ProjectColumn = ({ event, isConfirmed, onProjectSelected, onProjectClear, onProjectIgnore }: IProjectColumnProps) => {
-    let toggleId = getId('toggle-callout');
+    let toggleId = useId('toggle-callout');
     const [modal, setModal] = useState<boolean>(false);
 
     if (!event.project) {

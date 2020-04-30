@@ -1,4 +1,4 @@
-const bundleSize = require('./bundle-size');
+// const bundleSize = require('./bundle-size');
 
 module.exports = [
     {

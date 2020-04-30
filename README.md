@@ -20,3 +20,5 @@ _-The Calendar is The Timesheet in The Cloud!_
 
 
 _Maintained by [@damsleth](https://github.com/damsleth), [@olemp](https://github.com/olemp) and [@okms](https://github.com/okms)_
+
+(olemp fork)

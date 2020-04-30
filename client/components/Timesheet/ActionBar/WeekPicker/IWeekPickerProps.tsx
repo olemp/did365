@@ -1,6 +1,9 @@
-import { ITimesheetPeriod } from '../../ITimesheetPeriod';
+import { ITimesheetScope } from "components/Timesheet/types";
 
+/**
+ * @category Timesheet
+ */
 export interface IWeekPickerProps {
-    period: ITimesheetPeriod;
-    onChange: (period: ITimesheetPeriod) => void;
+    scope: ITimesheetScope;
+    onChange: (scope: ITimesheetScope) => void;
 }

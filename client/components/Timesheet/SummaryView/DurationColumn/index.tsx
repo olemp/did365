@@ -1,4 +1,4 @@
-import { IColumn } from 'components/List';
+import { IColumn } from 'common/components/List';
 import * as React from 'react';
 
 export interface IDurationColumnProps {
@@ -8,7 +8,7 @@ export interface IDurationColumnProps {
 
 /**
  * @component DurationColumn
- * @description 
+ * @category Timesheet
  */
 export const DurationColumn = ({ row, column }: IDurationColumnProps) => {
     let style: React.CSSProperties = { ...column.data.style };

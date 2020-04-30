@@ -1,3 +1,8 @@
 const bundleSize = require('./bundle-size');
 
-module.exports = [bundleSize];
+module.exports = [
+    {
+        name: 'Build',
+        callback: async () => 'Build success',
+      }
+];

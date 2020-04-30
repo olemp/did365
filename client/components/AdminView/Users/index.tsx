@@ -1,6 +1,6 @@
 
 import { useQuery } from '@apollo/react-hooks';
-import { List } from 'components/List';
+import { List } from 'common/components/List';
 import { getValueTyped as value } from 'helpers';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
@@ -12,8 +12,7 @@ import GET_USERS from './GET_USERS';
 import { UserFormModal, IUserFormModalProps } from './UserFormModal';
 
 /**
- * @component Users
- * @description
+ * @category AdminView
  */
 export const Users = () => {
     const [userForm, setUserForm] = React.useState<IUserFormModalProps>(null);

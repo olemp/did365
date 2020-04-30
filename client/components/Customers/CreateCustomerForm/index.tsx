@@ -1,6 +1,5 @@
 import { useMutation } from '@apollo/react-hooks';
-import { IconPicker } from 'common/components/IconPicker';
-import { UserMessage } from 'components/UserMessage';
+import { IconPicker, UserMessage } from 'common/components';
 import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { MessageBarType } from 'office-ui-fabric-react/lib/MessageBar';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
@@ -12,8 +11,7 @@ import { ICreateCustomerFormProps } from './ICreateCustomerFormProps';
 import { ICreateCustomerFormValidation } from './ICreateCustomerFormValidation';
 
 /**
- * @component CreateCustomerForm
- * @description Form for creating a new Custoner
+ * @category Customers
  */
 export const CreateCustomerForm = ({ initialModel = { key: '', name: '', description: '', icon: 'Page' } }: ICreateCustomerFormProps) => {
     let [validation, setValidation] = useState<ICreateCustomerFormValidation>({ errors: {}, invalid: true });

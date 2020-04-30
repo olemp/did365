@@ -1,6 +1,9 @@
 
 import gql from 'graphql-tag';
 
+/**
+ * @ignore
+ */
 export default gql`
 {
     customers {
@@ -10,5 +13,6 @@ export default gql`
         description
         webLink
         icon
+        inactive
     }
 }`;

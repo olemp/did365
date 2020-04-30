@@ -8,15 +8,12 @@ import { ProgressIndicator } from 'office-ui-fabric-react/lib/ProgressIndicator'
 import { Slider } from 'office-ui-fabric-react/lib/Slider';
 import * as React from 'react';
 import * as _ from 'underscore';
-import { GET_CONFIRMED_TIME_ENTRIES } from './GET_CONFIRMED_TIME_ENTRIES';
+import GET_CONFIRMED_TIME_ENTRIES  from './GET_CONFIRMED_TIME_ENTRIES';
 import { IAdminSummaryViewProps } from './IAdminSummaryViewProps';
 require('moment/locale/en-gb');
 
 /**
- * @component AdminSummaryView
- * @description Shows SummaryView type Admin
- * 
- * @param {IAdminSummaryViewProps} props Props
+ * @category AdminView
  */
 export const AdminSummaryView = (props: IAdminSummaryViewProps) => {
     const [year, setYear] = React.useState<number>(moment().year());
@@ -27,7 +24,7 @@ export const AdminSummaryView = (props: IAdminSummaryViewProps) => {
     });
     let entries = value<any[]>(data, 'result.entries', []).filter(e => e.monthNumber > 0);
 
-    let periods: IPivotItemProps[] = [moment().year() - 2, moment().year() - 1, moment().year()].map(year => ({
+    let periods: IPivotItemProps[] = [2, 1, 0].map(i => moment().year() - i).map(year => ({
         key: `${year}`,
         itemKey: `${year}`,
         headerText: `${year}`,

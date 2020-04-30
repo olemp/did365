@@ -9,7 +9,10 @@ import { ACTIONBAR_ICON_PROPS } from '../ACTIONBAR_ICON_PROPS';
 import { CALENDAR_STRINGS } from './CALENDAR_STRINGS';
 import { IWeekPickerProps } from './IWeekPickerProps';
 
-export const WeekPicker = ({ period, onChange }: IWeekPickerProps) => {
+/**
+ * @category Timesheet
+ */
+export const WeekPicker = ({ scope, onChange }: IWeekPickerProps) => {
     let [calendar, setCalendar] = useState(null);
 
     return (
@@ -18,7 +21,7 @@ export const WeekPicker = ({ period, onChange }: IWeekPickerProps) => {
                 <TextField
                     className='c-Timesheet-weekPicker'
                     onClick={event => setCalendar(event.currentTarget)}
-                    value={getTimespanString(period.startDateTime, period.endDateTime)}
+                    value={getTimespanString(scope.startDateTime, scope.endDateTime)}
                     styles={{ field: { color: 'rgb(120, 120, 120)', cursor: 'pointer' }, root: { width: 280, marginTop: 6 } }}
                     readOnly
                     borderless
@@ -46,7 +49,7 @@ export const WeekPicker = ({ period, onChange }: IWeekPickerProps) => {
                             showWeekNumbers={true}
                             dateRangeType={DateRangeType.Week}
                             autoNavigateOnSelection={true}
-                            value={period.startDateTime.toDate()} />
+                            value={scope.startDateTime.toDate()} />
                     </FocusTrapZone>
                 </Callout>
             )}

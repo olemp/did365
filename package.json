@@ -75,7 +75,7 @@
         "loglevel-plugin-prefix": "0.8.4",
         "moment": "2.24.0",
         "morgan": "1.10.0",
-        "node-fetch": "2.6.0",
+        "node-fetch": "2.6.1",
         "node-sass": "4.13.1",
         "office-ui-fabric-react": "7.106.3",
         "passport": "0.4.1",
